@@ -11,7 +11,7 @@ The database credentials and archive node address used by mev-inspect-py need to
 
 ## Ubuntu install instructions
 
-So, starting from a clean Ubuntu 22.04 installation, the prerequisites for pyenv, psycopg2 (python3-dev libpq-dev) and postgres (postgresql postgresql-contrib) can be installed with
+So, starting from a clean Ubuntu 22.04 installation, the prerequisites for pyenv, psycopg2 (python3-dev libpq-dev) can be installed with
 
 `sudo apt install -y make build-essential git libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev liblzma-dev python3-dev libpq-dev`
 
