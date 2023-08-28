@@ -13,7 +13,7 @@ The database credentials and archive node address used by mev-inspect-py need to
 
 So, starting from a clean Ubuntu 22.04 installation, the prerequisites for pyenv, psycopg2 (python3-dev libpq-dev) and postgres (postgresql postgresql-contrib) can be installed with
 
-`sudo apt install -y make build-essential git libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev liblzma-dev python3-dev libpq-dev postgresql postgresql-contrib`
+`sudo apt install -y make build-essential git libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev liblzma-dev python3-dev libpq-dev`
 
 ### pyenv
 Install pyenv using the web installer
@@ -45,6 +45,21 @@ If running over ssh you should also add the following to `~/.profile` to prevent
 `export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring`
 
 Again update current shell by running `source ~/.bashrc` or `source ~/.profile` as appropriate.
+
+### postgres
+We have tested two alternatives for postgres - installing locally or as a container.
+
+#### Option 1: Installing locally
+
+To install locally from a clean Ubuntu 22.04 installation, run:
+`sudo apt install postgresql postgresql-contrib`
+
+Note: You may need to reconfigure your pg-hba.conf to allow local access.
+
+#### Option 2: Installing docker
+
+To avoid interfering with your local postgres instance, you may prefer to run postgres within a docker container.
+For docker installation instructions, please refer to https://docs.docker.com/engine/install/ubuntu/
 
 ### mev-inspect-py
 
