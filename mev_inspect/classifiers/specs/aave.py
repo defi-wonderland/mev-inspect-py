@@ -27,7 +27,8 @@ class AaveLiquidationClassifier(LiquidationClassifier):
             liquidated = liquidation_trace.inputs["_user"]
             debt_token_address = liquidation_trace.inputs["_reserve"]
             received_token_address = liquidation_trace.inputs["_collateral"]
-        elif liquidation_trace.protocol == Protocol.aave_v2:
+
+        else:
             liquidated = liquidation_trace.inputs["user"]
             debt_token_address = liquidation_trace.inputs["debtAsset"]
             received_token_address = liquidation_trace.inputs["collateralAsset"]
@@ -95,6 +96,14 @@ AAVE_SPEC = [
             "liquidationCall(address,address,address,uint256,bool)": AaveLiquidationClassifier,
         },
         valid_contract_addresses=["0x7d2768de32b0b80b7a3454c06bdac94a69ddc7a9"],
+    ),
+    ClassifierSpec(
+        abi_name="AaveLendingPoolV3",
+        protocol=Protocol.aave_v3,
+        classifiers={
+            "liquidationCall(address,address,address,uint256,bool,address)": AaveLiquidationClassifier,
+        },
+        valid_contract_addresses=["0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"],
     ),
 ]
 
