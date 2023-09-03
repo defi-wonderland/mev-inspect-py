@@ -20,7 +20,6 @@ class AaveLiquidationClassifier(LiquidationClassifier):
         child_transfers: List[Transfer],
         child_traces: List[ClassifiedTrace],
     ) -> Optional[Liquidation]:
-
         liquidator = liquidation_trace.from_address
 
         if liquidation_trace.protocol == Protocol.aave:
@@ -87,7 +86,7 @@ AAVE_SPEC = [
         classifiers={
             "liquidationCall(address,address,address,uint256,bool)": AaveLiquidationClassifier,
         },
-        valid_contract_addresses=["0x398eC7346DcD622eDc5ae82352F02bE94C62d119"],
+        valid_contract_addresses=["0x398eC7346DcD622eDc5ae82352F02bE94C62d119".lower()],
     ),
     ClassifierSpec(
         abi_name="AaveLendingPoolV2",
@@ -101,9 +100,9 @@ AAVE_SPEC = [
         abi_name="AaveLendingPoolV3",
         protocol=Protocol.aave_v3,
         classifiers={
-            "liquidationCall(address,address,address,uint256,bool,address)": AaveLiquidationClassifier,
+            "liquidationCall(address,address,address,uint256,bool)": AaveLiquidationClassifier,
         },
-        valid_contract_addresses=["0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"],
+        valid_contract_addresses=["0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2".lower()],
     ),
 ]
 
