@@ -52,6 +52,10 @@ def is_known_router_address(address):
         "0x3E66B66Fd1d0b02fDa6C811Da9E0547970DB2f21",  # Balance exchange proxy
         "0x1bD435F3C054b6e901B7b108a0ab7617C808677b",  # Paraswap v4
         "0xC011a73ee8576Fb46F5E1c5751cA3B9Fe0af2a6F",  # SNX proxy synth issuer
+        "0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45",  # UniswapV3SwapRouter02
+        "0xEf1c6E67703c7BD7107eed8303Fbe6EC2554BF6B",  # UniswapV3UniversalRouter
+        "0x3fC91A3afd70395Cd496C647d5a6CC9D4B2b7FAD",  # UniswapV3UniversalRouter02
+        "0xf164fC0Ec4E93095b804a4795bBe1e041497b92a",  # UniswapV2Router
     ]
     return address in known_router_addresses
 
