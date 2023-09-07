@@ -36,6 +36,8 @@ async def create_from_block_number(
     )
 
     miner_address = _get_miner_address_from_traces(traces)
+    if miner_address is None:
+        miner_address = await w3.eth.get_block(block_number).get("miner")
 
     return Block(
         block_number=block_number,
@@ -184,7 +186,6 @@ def _get_miner_address_from_traces(traces: List[Trace]) -> Optional[str]:
     for trace in traces:
         if trace.type == TraceType.reward:
             return trace.action["author"]
-
     return None
 
 
