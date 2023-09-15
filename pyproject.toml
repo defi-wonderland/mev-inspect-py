@@ -84,3 +84,6 @@ filter_files = true
 known_first_party = "mev_inspect"
 known_third_party = "alembic"
 py_version=39
+
+[pytest]
+asyncio_mode = "auto"
