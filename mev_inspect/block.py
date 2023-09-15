@@ -34,7 +34,6 @@ async def create_from_block_number(
         _find_or_fetch_block_traces(w3, block_number, trace_db_session),
         _find_or_fetch_base_fee_per_gas(w3, block_number, trace_db_session),
     )
-
     miner_address = await _find_or_fetch_miner_address(w3, block_number, traces)
 
     return Block(
@@ -189,7 +188,6 @@ async def _find_or_fetch_miner_address(
     miner_address = _get_miner_address_from_traces(traces)
     if miner_address is not None:
         return miner_address
-
     return await _fetch_miner_eth2(w3, block_number)
 
 
