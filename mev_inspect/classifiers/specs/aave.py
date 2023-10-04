@@ -86,7 +86,7 @@ AAVE_SPEC = [
         classifiers={
             "liquidationCall(address,address,address,uint256,bool)": AaveLiquidationClassifier,
         },
-        valid_contract_addresses=["0x398eC7346DcD622eDc5ae82352F02bE94C62d119".lower()],
+        valid_contract_addresses=["0x398eC7346DcD622eDc5ae82352F02bE94C62d119"],
     ),
     ClassifierSpec(
         abi_name="AaveLendingPoolV2",
@@ -102,7 +102,7 @@ AAVE_SPEC = [
         classifiers={
             "liquidationCall(address,address,address,uint256,bool)": AaveLiquidationClassifier,
         },
-        valid_contract_addresses=["0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2".lower()],
+        valid_contract_addresses=["0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"],
     ),
 ]
 
